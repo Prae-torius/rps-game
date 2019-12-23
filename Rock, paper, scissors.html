@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const computerPlay = () => {
+        let randomNum = Math.floor(Math.random() * 3);
+        if (randomNum == 1) {
+          return "paper";
+        } else if (randomNum == 2) {
+          return "scissors";
+        } else {
+          return "rock";
+        }
+      };
+
+      const playRPS = (player, computer) => {
+        const playerInput = player.toLowerCase();
+        if (playerInput == "rock") {
+          if (computer == "rock") {
+            return "It's a tie! Rock matches rock!";
+          } else if (computer == "paper") {
+            return "You lose! Paper beats rock!";
+          } else if (computer == "scissors") {
+            return "You win! Rock beats scissors!";
+          }
+        } else if (playerInput == "paper") {
+          if (computer == "rock") {
+            return "You win! Paper beats rock!";
+          } else if (computer == "paper") {
+            return "It's a tie! Paper matches paper!";
+          } else if (computer == "scissors") {
+            return "You lose! Scissors beats paper!";
+          }
+        } else if (playerInput == "scissors") {
+          if (computer == "rock") {
+            return "You lose! Rock beats scissors!";
+          } else if (computer == "paper") {
+            return "You win! Scissors beats paper!";
+          } else if (computer == "scissors") {
+            return "It's a tie! Scissors matches scissors!";
+          }
+        }
+      };
+
+      const playerSelection = () => {
+        let selection = prompt("Rock, paper, or scissors?");
+        return selection;
+      };
+
+      const game = () => {
+        console.log(playRPS(playerSelection(), computerPlay()));
+        console.log(playRPS(playerSelection(), computerPlay()));
+        console.log(playRPS(playerSelection(), computerPlay()));
+        console.log(playRPS(playerSelection(), computerPlay()));
+        console.log(playRPS(playerSelection(), computerPlay()));
+      };
+
+      game();
+    </script>
+  </body>
+  <html></html>
+</html>
